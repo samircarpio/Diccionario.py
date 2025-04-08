@@ -64,6 +64,22 @@ print (df.mean)
 
 print (df.min)
 
+# Actividad 3
+import matplotlib.pyplot as plt
+
+x=[1,2,3,4,5]
+y=[45,5,67,86,65]
+
+plt.plot(x,y)
+
+plt.xlabel("eje X")
+
+plt.xlabel("eje Y")
+
+plt.title("grafico de ejemplo ")
+
+plt.show()
+
 print (df.max)
 
 print (f'Cantidad: "{df.shape}')
