@@ -56,12 +56,16 @@ import pandas as pd
 
 df=pd.read_csv("StudentsPerformance.csv")
 
-print(df[["math score","reading score","writing score"]].tail(3))
+print(df.iloc[:, -3:])
 
-print(df.head(100))
+print (df.head(100))
 
-print(df.max())
+print (df.mean)
 
-print(df.min())
+print (df.min)
 
-print(df.cant())
+print (df.max)
+
+print (f'Cantidad: "{df.shape}')
+
+print (df.to_string())
