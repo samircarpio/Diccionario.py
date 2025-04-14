@@ -85,3 +85,18 @@ print (df.max)
 print (f'Cantidad: "{df.shape}')
 
 print (df.to_string())
+
+# actiidad 4
+import matplotlib.pyplot as plt
+
+label=["a","b","c","d"]
+
+datos=[25,35,40,45]
+
+colores=["gold","lightcoral","lightskyblue","lightgreen"]
+
+plt.pie(datos,labels=label,colors=colores,autopct="%1.1f%%",startangle=140)
+
+plt.axis("equal")
+
+plt.show()
