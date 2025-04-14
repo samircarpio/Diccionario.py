@@ -135,3 +135,33 @@ a=np.random.randint(1,100,size=1000) #crear una columna con numeros aletorios
 df["columna de arreglo"] =a
 
 print(df)
+
+#ACTIVIDAD7 
+import pandas as pd
+
+df=pd.read_csv("StudentsPerformance.csv")
+
+print(df["math score"].sum) #suma
+
+print(df["math score"].count) #resta
+
+print(df["math score"].median) #la media
+
+print(df["math score"].std) #estandar
+
+print(df["math score"].max) #maximo
+
+print(df["math score"].min) #minimo
+
+print(df.head)
+
+#actividad8
+import pandas as pd
+
+df=pd.read_csv("StudentsPerformance.csv")
+
+print(df["math score"]+df["reading score"]+df["writing score"]) 
+
+#print(df.head)
+
+
