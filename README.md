@@ -100,3 +100,12 @@ plt.pie(datos,labels=label,colors=colores,autopct="%1.1f%%",startangle=140)
 plt.axis("equal")
 
 plt.show()
+#actividad 5 "nueva columna"
+
+import pandas as pd
+
+df=pd.read_csv("StudentsPerformance.csv")
+
+df["nueva columna"]= 70
+
+print(df)
