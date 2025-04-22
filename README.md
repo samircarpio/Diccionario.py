@@ -100,7 +100,7 @@ plt.pie(datos,labels=label,colors=colores,autopct="%1.1f%%",startangle=140)
 plt.axis("equal")
 
 plt.show()
-#actividad 5 "nueva columna"
+# actividad 5 "nueva columna"
 
 import pandas as pd
 
@@ -109,7 +109,7 @@ df=pd.read_csv("StudentsPerformance.csv")
 df["nueva columna"]= 70
 
 print(df)
-#actividad 5 #como areglar
+# actividad 5 #como areglar
 
 import pandas as pd
 
@@ -122,7 +122,7 @@ a=np.arange(0,1000)
 df["columna de arreglo"] =a
 
 print(df)
-#actividad 6
+# actividad 6
 
 import pandas as pd
 
@@ -136,7 +136,7 @@ df["columna de arreglo"] =a
 
 print(df)
 
-#ACTIVIDAD7 
+# ACTIVIDAD7 
 import pandas as pd
 
 df=pd.read_csv("StudentsPerformance.csv")
@@ -155,7 +155,7 @@ print(df["math score"].min) #minimo
 
 print(df.head)
 
-#actividad8
+ # actividad8
 import pandas as pd
 
 df=pd.read_csv("StudentsPerformance.csv")
@@ -163,5 +163,17 @@ df=pd.read_csv("StudentsPerformance.csv")
 print(df["math score"]+df["reading score"]+df["writing score"]) 
 
 #print(df.head)
+
+# actividad 9
+
+import pandas as pd
+import numpy as np
+
+df=pd.read_csv("StudentsPerformance")
+
+df.sort_values("math score")
+
+df.sort_values(["math score"], ascending=False)
+
 
 
