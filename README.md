@@ -183,7 +183,9 @@ import pandas as pd
 df=pd.read_csv("users (1).csv")
 
 usuariosAlemanes=df[df["pais"] == 'Germany']
+
 edadmedia=usuariosAlemanes["edad"].mean
+
 print("la edad media es",edadmedia)
 
 # Actividad11
@@ -194,6 +196,17 @@ import pandas as pd
 df=pd.read_csv("users (1).csv")
 
 print(df[df["edad"].between(40,50)])
+
+# Actividad12
+obtener los nombres de todos los usuarios mayores a 30 años del pais de Canada
+
+import pandas as pd
+
+df=pd.read_csv("users (1).csv")
+
+usuariosdecanada=df[df["pais"] == 'Canada']
+         
+print(df[df["edad"]>30], usuariosdecanada)
 
 
 
