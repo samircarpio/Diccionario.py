@@ -175,5 +175,26 @@ df.sort_values("math score")
 
 df.sort_values(["math score"], ascending=False)
 
+# Actividad10
+obtener a los 5 usuarios mas viejos de Alemania 
+
+import pandas as pd
+
+df=pd.read_csv("users (1).csv")
+
+usuariosAlemanes=df[df["pais"] == 'Germany']
+edadmedia=usuariosAlemanes["edad"].mean
+print("la edad media es",edadmedia)
+
+# Actividad11
+Obtenertodods los usuarios entre las edades 40 y 50 años  
+
+import pandas as pd
+
+df=pd.read_csv("users (1).csv")
+
+print(df[df["edad"].between(40,50)])
+
+
 
 
