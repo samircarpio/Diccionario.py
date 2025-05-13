@@ -222,6 +222,118 @@ usuariosdefrancia=df[df["pais"] == 'France']
          
 print(df[df["edad"]>30], usuariosdecanada, usuariosdealemania, usuariosdefrancia)
 
+# actividad14
+
+import pandas as pd
+
+df = pd.read_csv('users.csv')
+
+France_jovenes = df[df['pais'] == 'France'].sort_values(by='edad').head(5)
+
+# 5 más jóvenes de Australia
+Australia_jovenes = df[df['pais'] == 'Australia'].sort_values(by='edad').head(5)
+
+print("5 usuarios más jóvenes de Francia:")
+print(France_jovenes)
+
+print("\n5 usuarios más jóvenes de Australia:")
+print(Australia_jovenes)
+
+# actividad15
+
+#actividad15
+#obtener el nombre de todos los usuarios mayores a 50años 
+#dividir entre masculino y femenino
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('users.csv')
+
+mayores_50 = df[df['edad'] > 50]
+
+masculinos = mayores_50[mayores_50['genero'] == 'male']['nombre']
+femeninos = mayores_50[mayores_50['genero'] == 'female']['nombre']
+ 
+print("Masculinos mayores de 50:")
+print(masculinos)
+
+print("\nFemeninos mayores de 50:")
+print(femeninos)
+
+mayores_50.plot(kind="bar", color=colores)
+plt.title('Promedio de usuarios mayores de 30')
+plt.xlabel('edad')
+plt.ylabel("Masculino","femenino")
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+
+# actividad16
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cargar el archivo CSV
+df = pd.read_csv('users.csv')
+
+# Filtrar usuarios mayores de 50 años
+mayores_50 = df[df['edad'] > 50]
+
+# Contar cuántos hay por género
+conteo_genero = mayores_50['genero'].value_counts()
+
+# Mostrar gráfico de barras
+conteo_genero.plot(kind='bar', color=['skyblue', 'lightcoral'])
+
+plt.title('Usuarios mayores de 50 años por género')
+plt.xlabel('Género')
+plt.ylabel('Cantidad')
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+
+# actividad17
+
+#actividad15
+#obtener el nombre de todos los usuarios mayores a 50años 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cargar los datos
+df = pd.read_csv('users.csv')
+
+# Normalizar nombres de columnas
+df.columns = df.columns.str.lower()
+
+# Limpiar valores de texto
+df['pais'] = df['pais'].str.lower()
+df['genero'] = df['genero'].str.lower()
+
+# Filtrar usuarios del Reino Unido
+uk_users = df[df['pais'].isin(['uk', 'united kingdom'])]
+
+# Obtener los 20 más viejos
+top_20_uk = uk_users.sort_values(by='edad', ascending=False).head(20)
+
+# Dividir por género
+conteo_genero = top_20_uk['genero'].value_counts()
+
+# Mostrar usuarios divididos
+print("Usuarios masculinos:")
+print(top_20_uk[top_20_uk['genero'] == 'masculino'][['nombre', 'edad']])
+
+print("\nUsuarios femeninos:")
+print(top_20_uk[top_20_uk['genero'] == 'femenino'][['nombre', 'edad']])
+
+# Crear gráfico de pastel
+colors = ['skyblue', 'lightcoral']  # Puedes agregar más colores si hay más géneros
+conteo_genero.plot(kind='pie', autopct='%1.1f%%', colors=colors, startangle=90)
+
+plt.title('Distribución por género - Top 20 usuarios más viejos del Reino Unido')
+plt.ylabel('')  # Ocultar etiqueta del eje Y
+plt.tight_layout()
+plt.show()
+
+
 
 
 
